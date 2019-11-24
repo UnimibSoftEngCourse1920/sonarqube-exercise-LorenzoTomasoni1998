@@ -73,11 +73,11 @@ public class Assignments {
 
     public List<PotentialAssignment> potentialsForNextUnassigned()
             throws Throwable {
-        ParameterSignature unassigned = nextUnassigned();
-        List<PotentialAssignment> assignments = getSupplier(unassigned).getValueSources(unassigned);
+        ParameterSignature notAssigned = nextUnassigned();
+        List<PotentialAssignment> assignments = getSupplier(notAssigned).getValueSources(notAssigned);
         
         if (assignments.isEmpty()) {
-            assignments = generateAssignmentsFromTypeAlone(unassigned);
+            assignments = generateAssignmentsFromTypeAlone(notAssigned);
         }
         
         return assignments;
