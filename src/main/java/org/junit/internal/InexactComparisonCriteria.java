@@ -3,7 +3,7 @@ package org.junit.internal;
 import org.junit.Assert;
 
 public class InexactComparisonCriteria extends ComparisonCriteria {
-    public Object fDelta;
+    private Object fDelta;
 
     public InexactComparisonCriteria(double delta) {
         fDelta = delta;
@@ -20,5 +20,13 @@ public class InexactComparisonCriteria extends ComparisonCriteria {
         } else {
             Assert.assertEquals((Float) expected, (Float) actual, (Float) fDelta);
         }
+    }
+    public Object getFDelta()
+    {
+        return fDelta;
+    }
+    public void setFDelta(Object fDelta)
+    {
+        this.fDelta=fDelta;
     }
 }
